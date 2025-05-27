@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext';
 import {
   School as SchoolIcon,
   Email as EmailIcon,
@@ -15,22 +14,34 @@ const ForgotPassword: React.FC = () => {
   const [error, setError] = useState('');
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
-  const { resetPassword } = useAuth();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError('');
+    setMessage('');
+    setLoading(true);
 
     try {
-      setMessage('');
-      setError('');
-      setLoading(true);
-      await resetPassword(email);
-      setMessage('Check your inbox for further instructions');
-    } catch (err) {
-      setError('Failed to reset password. Please try again.');
-    } finally {
-      setLoading(false);
-    }
+      const response = await fetch('http://localhost/MathQuest/backend/send-reset-email.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const result = await response.json();
+
+      if (result.status === 'success') {
+        setMessage('Check your inbox for further instructions.');
+      } else {
+        setError(result.message || 'Failed to reset password. Please try again.');
+      }
+    } catch (err: any) {
+  console.error('Reset error:', err);
+  setError('An error occurred. Please try again.');
+}
+
   };
 
   return (
@@ -107,4 +118,4 @@ const ForgotPassword: React.FC = () => {
   );
 };
 
-export default ForgotPassword; 
+export default ForgotPassword;
