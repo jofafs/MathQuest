@@ -1,0 +1,299 @@
+/* Assignments Page Styles */
+
+.assignments-page {
+  min-height: 100vh;
+  background-color: var(--light-bg);
+  padding: 2rem;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.page-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+/* Search and Actions Card */
+.actions-card {
+  background-color: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--card-shadow);
+  border: none;
+}
+
+.search-group {
+  position: relative;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 3rem;
+  border-radius: 0.75rem;
+  border: 2px solid var(--border-color);
+  background-color: white;
+  color: var(--text-color);
+  transition: all var(--transition-speed) ease;
+}
+
+.search-input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(var(--primary-color-rgb), 0.1);
+  outline: none;
+}
+
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--secondary-color);
+}
+
+.create-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  transition: all var(--transition-speed) ease;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+}
+
+.create-btn:hover {
+  background-color: var(--primary-color-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(var(--primary-color-rgb), 0.2);
+}
+
+/* Assignments Table Card */
+.assignments-card {
+  background-color: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: var(--card-shadow);
+  border: none;
+}
+
+.assignments-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.assignments-table th {
+  font-weight: 600;
+  color: var(--text-color);
+  padding: 1rem;
+  border-bottom: 2px solid var(--border-color);
+  text-align: left;
+}
+
+.assignments-table td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-color);
+}
+
+.assignments-table tbody tr {
+  transition: all var(--transition-speed) ease;
+}
+
+.assignments-table tbody tr:hover {
+  background-color: rgba(var(--primary-color-rgb), 0.05);
+}
+
+.assignment-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.assignment-title svg {
+  color: var(--primary-color);
+}
+
+.assignment-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--secondary-color);
+}
+
+.assignment-group svg {
+  font-size: 1.25rem;
+}
+
+.status-badge {
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.status-badge.active {
+  background-color: rgba(var(--success-color-rgb), 0.1);
+  color: var(--success-color);
+}
+
+.status-badge.draft {
+  background-color: rgba(var(--warning-color-rgb), 0.1);
+  color: var(--warning-color);
+}
+
+.status-badge.completed {
+  background-color: rgba(var(--secondary-color-rgb), 0.1);
+  color: var(--secondary-color);
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.progress-bar {
+  flex-grow: 1;
+  height: 8px;
+  background-color: var(--border-color);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: var(--primary-color);
+  border-radius: 4px;
+  transition: width var(--transition-speed) ease;
+}
+
+.progress-text {
+  font-weight: 600;
+  color: var(--text-color);
+  min-width: 3rem;
+  text-align: right;
+}
+
+.action-btn {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: all var(--transition-speed) ease;
+  background-color: transparent;
+  border: none;
+  color: var(--secondary-color);
+}
+
+.action-btn:hover {
+  background-color: rgba(var(--primary-color-rgb), 0.1);
+  color: var(--primary-color);
+}
+
+.action-btn.delete:hover {
+  background-color: rgba(var(--danger-color-rgb), 0.1);
+  color: var(--danger-color);
+}
+
+/* Modal Styles */
+.modal-content {
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+  border-bottom: 1px solid var(--border-color);
+  padding: 1.5rem;
+}
+
+.modal-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+.modal-footer {
+  border-top: 1px solid var(--border-color);
+  padding: 1.5rem;
+}
+
+.form-label {
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.form-control,
+.form-select {
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  border: 2px solid var(--border-color);
+  background-color: white;
+  color: var(--text-color);
+  transition: all var(--transition-speed) ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(var(--primary-color-rgb), 0.1);
+  outline: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .assignments-page {
+    padding: 1.5rem;
+  }
+  
+  .page-title {
+    font-size: 1.75rem;
+  }
+  
+  .assignments-card {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .assignments-page {
+    padding: 1rem;
+  }
+  
+  .page-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  
+  .create-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .assignments-table th,
+  .assignments-table td {
+    padding: 0.75rem;
+  }
+  
+  .modal-body {
+    padding: 1rem;
+  }
+} 

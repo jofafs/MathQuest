@@ -1,0 +1,264 @@
+/* Feedback Page Styles */
+
+.feedback-page {
+  min-height: 100vh;
+  background-color: var(--light-bg);
+  padding: 2rem;
+}
+
+.page-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+  letter-spacing: -0.5px;
+}
+
+/* Tabs */
+.nav-tabs {
+  border: none;
+  margin-bottom: 2rem;
+}
+
+.nav-tabs .nav-link {
+  border: none;
+  color: var(--secondary-color);
+  font-weight: 600;
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+  transition: all var(--transition-speed) ease;
+}
+
+.nav-tabs .nav-link:hover {
+  color: var(--primary-color);
+  background-color: rgba(var(--primary-color-rgb), 0.05);
+}
+
+.nav-tabs .nav-link.active {
+  color: var(--primary-color);
+  background-color: rgba(var(--primary-color-rgb), 0.1);
+  border: none;
+}
+
+/* Feedback Form */
+.feedback-form-card {
+  background-color: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: var(--card-shadow);
+  border: none;
+  height: 100%;
+}
+
+.form-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.form-select,
+.form-control {
+  border: 2px solid var(--border-color);
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  transition: all var(--transition-speed) ease;
+}
+
+.form-select:focus,
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(var(--primary-color-rgb), 0.1);
+}
+
+.form-select option {
+  padding: 0.5rem;
+}
+
+.submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  transition: all var(--transition-speed) ease;
+}
+
+.submit-btn:hover {
+  background-color: var(--primary-color-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(var(--primary-color-rgb), 0.2);
+}
+
+/* Feedback List */
+.feedback-list-card {
+  background-color: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: var(--card-shadow);
+  border: none;
+  height: 100%;
+}
+
+.feedback-item {
+  padding: 1.25rem;
+  border-bottom: 1px solid var(--border-color);
+  transition: all var(--transition-speed) ease;
+}
+
+.feedback-item:last-child {
+  border-bottom: none;
+}
+
+.feedback-item:hover {
+  background-color: rgba(var(--primary-color-rgb), 0.05);
+}
+
+.feedback-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.feedback-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: rgba(var(--primary-color-rgb), 0.1);
+}
+
+.feedback-icon svg {
+  color: var(--primary-color);
+  font-size: 20px;
+}
+
+.feedback-category {
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.feedback-date {
+  color: var(--secondary-color);
+  font-size: 0.875rem;
+}
+
+.feedback-message {
+  color: var(--text-color);
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+.feedback-footer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.status-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.priority-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+}
+
+/* Recommendations */
+.recommendation-item {
+  padding: 1.25rem;
+  border-bottom: 1px solid var(--border-color);
+  transition: all var(--transition-speed) ease;
+}
+
+.recommendation-item:last-child {
+  border-bottom: none;
+}
+
+.recommendation-item:hover {
+  background-color: rgba(var(--primary-color-rgb), 0.05);
+}
+
+.recommendation-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.recommendation-type {
+  font-weight: 600;
+  color: var(--text-color);
+  text-transform: capitalize;
+}
+
+.recommendation-date {
+  color: var(--secondary-color);
+  font-size: 0.875rem;
+}
+
+.recommendation-message {
+  color: var(--text-color);
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .feedback-page {
+    padding: 1.5rem;
+  }
+  
+  .page-title {
+    font-size: 1.75rem;
+  }
+  
+  .nav-tabs .nav-link {
+    padding: 0.75rem 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .feedback-page {
+    padding: 1rem;
+  }
+  
+  .feedback-form-card,
+  .feedback-list-card {
+    padding: 1rem;
+  }
+  
+  .feedback-item,
+  .recommendation-item {
+    padding: 1rem;
+  }
+  
+  .feedback-header,
+  .recommendation-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+} 

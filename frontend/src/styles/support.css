@@ -1,0 +1,213 @@
+/* Support Page Styles */
+
+.support-page {
+  min-height: 100vh;
+  background-color: var(--light-bg);
+  padding: 2rem;
+}
+
+.page-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+  letter-spacing: -0.5px;
+}
+
+/* FAQ Section */
+.faq-card {
+  background-color: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: var(--card-shadow);
+  border: none;
+  margin-bottom: 1.5rem;
+}
+
+.faq-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.accordion {
+  --bs-accordion-border-color: var(--border-color);
+  --bs-accordion-btn-focus-border-color: var(--primary-color);
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 3px rgba(var(--primary-color-rgb), 0.1);
+}
+
+.accordion-button {
+  font-weight: 500;
+  padding: 1rem 1.25rem;
+  border-radius: 0.5rem !important;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: rgba(var(--primary-color-rgb), 0.05);
+  color: var(--primary-color);
+}
+
+.accordion-body {
+  padding: 1.25rem;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Contact Form */
+.contact-form-card {
+  background-color: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: var(--card-shadow);
+  border: none;
+}
+
+.form-label {
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.form-control {
+  border: 2px solid var(--border-color);
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  transition: all var(--transition-speed) ease;
+}
+
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(var(--primary-color-rgb), 0.1);
+}
+
+.submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  transition: all var(--transition-speed) ease;
+}
+
+.submit-btn:hover {
+  background-color: var(--primary-color-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(var(--primary-color-rgb), 0.2);
+}
+
+/* Resources Section */
+.resources-card {
+  background-color: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: var(--card-shadow);
+  border: none;
+  margin-bottom: 1.5rem;
+}
+
+.resource-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  transition: all var(--transition-speed) ease;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.resource-item:hover {
+  background-color: rgba(var(--primary-color-rgb), 0.05);
+  color: var(--primary-color);
+}
+
+.resource-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: rgba(var(--primary-color-rgb), 0.1);
+}
+
+.resource-icon svg {
+  color: var(--primary-color);
+  font-size: 20px;
+}
+
+.resource-info {
+  flex: 1;
+}
+
+.resource-title {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.resource-type {
+  font-size: 0.875rem;
+  color: var(--secondary-color);
+}
+
+/* Quick Links */
+.quick-links-card {
+  background-color: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: var(--card-shadow);
+  border: none;
+}
+
+.quick-link-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  transition: all var(--transition-speed) ease;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.quick-link-item:hover {
+  background-color: rgba(var(--primary-color-rgb), 0.05);
+  color: var(--primary-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .support-page {
+    padding: 1.5rem;
+  }
+  
+  .page-title {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .support-page {
+    padding: 1rem;
+  }
+  
+  .faq-card,
+  .contact-form-card,
+  .resources-card,
+  .quick-links-card {
+    padding: 1rem;
+  }
+  
+  .resource-item {
+    padding: 0.75rem;
+  }
+} 

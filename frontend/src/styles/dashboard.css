@@ -1,0 +1,52 @@
+.page-container {
+    padding: 2rem;
+    margin-left: 280px;
+  }
+  
+  .page-header {
+    margin-bottom: 2rem;
+  }
+  
+  .page-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .page-subtitle {
+    color: #6c757d;
+    margin-top: 0.5rem;
+  }
+  
+  .grid {
+    display: grid;
+    gap: 1.5rem;
+    width: 100%;
+  }
+  
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .card {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .kpi-card .kpi-value {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+  }
+  
+  .card-title {
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  

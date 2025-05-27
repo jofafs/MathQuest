@@ -1,0 +1,57 @@
+:root {
+    --sidebar-width: 280px;
+    --navbar-height: 64px;
+    --light-bg: #f8f9fa;
+    --border-color: #e9ecef;
+    --primary-color: #4361ee;
+    --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* === Layout === */
+  .main-layout {
+    display: flex;
+    min-height: 100vh;
+    background-color: var(--light-bg);
+  }
+  
+  /* === Sidebar === */
+  .sidebar-wrapper {
+    width: var(--sidebar-width);
+    min-width: var(--sidebar-width);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+    border-right: 1px solid var(--border-color);
+    box-shadow: var(--card-shadow);
+    z-index: 1020;
+    overflow-y: auto;
+  }
+  
+  /* === Main Content === */
+  .main-content {
+    flex-grow: 1;
+    margin-left: var(--sidebar-width);
+    padding: 2rem;
+    background-color: var(--light-bg);
+    min-height: 100vh;
+    transition: margin-left 0.3s ease;
+  }
+  
+  .content-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  /* === Navbar Overrides (Optional if using Bootstrap) === */
+  .navbar {
+    height: var(--navbar-height);
+    background-color: #fff;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+  }
+  

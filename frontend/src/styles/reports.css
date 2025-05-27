@@ -1,0 +1,235 @@
+/* Reports Page Styles */
+
+.reports-page {
+  padding: 2rem;
+  background-color: var(--light-bg);
+  min-height: 100vh;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.page-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0;
+}
+
+/* Report Type Cards */
+.report-type-card {
+  background-color: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  height: 100%;
+  transition: all var(--transition-speed) ease;
+  border: 2px solid var(--border-color);
+  cursor: pointer;
+}
+
+.report-type-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary-color);
+}
+
+.report-type-card.active {
+  border-color: var(--primary-color);
+  background-color: rgba(var(--primary-color-rgb), 0.05);
+}
+
+.report-type-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.report-type-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background-color: rgba(var(--primary-color-rgb), 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-speed) ease;
+}
+
+.report-type-card.active .report-type-icon {
+  background-color: rgba(var(--primary-color-rgb), 0.2);
+}
+
+.report-type-icon svg {
+  font-size: 24px;
+  color: var(--primary-color);
+}
+
+.report-type-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.report-type-description {
+  color: var(--secondary-color);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Configuration Card */
+.config-card {
+  background-color: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border: 1px solid var(--border-color);
+}
+
+.config-form-group {
+  margin-bottom: 1rem;
+}
+
+.config-label {
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.config-select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 0.75rem;
+  transition: all var(--transition-speed) ease;
+  background-color: white;
+}
+
+.config-select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(var(--primary-color-rgb), 0.1);
+}
+
+.format-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.format-button {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--border-color);
+  border-radius: 0.75rem;
+  background-color: white;
+  color: var(--text-color);
+  font-weight: 500;
+  transition: all var(--transition-speed) ease;
+}
+
+.format-button:hover {
+  border-color: var(--primary-color);
+  background-color: rgba(var(--primary-color-rgb), 0.05);
+}
+
+.format-button.active {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+}
+
+.generate-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.75rem;
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 600;
+  transition: all var(--transition-speed) ease;
+}
+
+.generate-button:hover {
+  background-color: var(--primary-color-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(var(--primary-color-rgb), 0.2);
+}
+
+/* Preview Card */
+.preview-card {
+  background-color: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
+}
+
+.preview-header {
+  margin-bottom: 1.5rem;
+}
+
+.preview-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.preview-content {
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.preview-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background-color: rgba(var(--primary-color-rgb), 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+.preview-icon svg {
+  font-size: 32px;
+  color: var(--primary-color);
+}
+
+.preview-message {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.preview-submessage {
+  color: var(--secondary-color);
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767.98px) {
+  .reports-page {
+    padding: 1rem;
+  }
+
+  .format-buttons {
+    flex-direction: column;
+  }
+
+  .preview-content {
+    padding: 2rem 0;
+  }
+} 
