@@ -14,17 +14,17 @@ import '../styles/home.css';
 const Home: React.FC = () => {
   const features = [
     {
-      icon: <SchoolIcon />,
+      icon: <SchoolIcon fontSize="large" />,
       title: 'Track Progress',
       description: 'Monitor student performance and learning outcomes in real-time'
     },
     {
-      icon: <AssignmentIcon />,
+      icon: <AssignmentIcon fontSize="large" />,
       title: 'Assign Quizzes',
       description: 'Create and manage interactive quizzes to test student knowledge'
     },
     {
-      icon: <TrendingUpIcon />,
+      icon: <TrendingUpIcon fontSize="large" />,
       title: 'Monitor Engagement',
       description: 'Track student participation and engagement in learning activities'
     }
@@ -49,43 +49,34 @@ const Home: React.FC = () => {
   ];
 
   return (
-    <div className="home-page">
+    <div className="home-page roblox-theme">
       {/* Hero Section */}
-      <section className="hero-section">
+      <section className="hero-section roblox-hero">
         <Container>
           <Row className="align-items-center">
-            <Col lg={6} className="mb-4 mb-lg-0">
-              <h1 className="hero-title">
-                Make Math Learning Fun with MathQuest
+            <Col lg={6}>
+              <h1 className="hero-title roblox-title">
+                Make Math Learning Fun with <span className="brand-highlight">MathQuest</span>
               </h1>
               <p className="hero-subtitle">
-                Transform your classroom with our Roblox-based educational game platform. 
-                Track progress, assign quizzes, and monitor student engagement in real-time.
+                A Roblox-powered adventure that turns math into an epic quest. Assign, track, and engage your students like never before.
               </p>
               <div className="hero-buttons">
-                <Link to="/register" className="hero-btn hero-btn-primary">
+                <Link to="/register" className="hero-btn hero-btn-primary neon-button">
                   Get Started <ArrowForwardIcon />
                 </Link>
-                <button className="hero-btn hero-btn-outline">
-                  <PlayArrowIcon /> Try Demo
+                <button className="hero-btn hero-btn-outline glass-button">
                 </button>
               </div>
             </Col>
             <Col lg={6}>
               <div className="hero-image">
                 <img
-                  src="/game-screenshot.png"
+                  src="9ad969ce-9a65-425f-a30f-7b9c634bf621.jpg"
                   alt="MathQuest Game Screenshot"
+                  className="rounded-image"
                 />
-                <div className="hero-rating">
-                  <div className="hero-rating-icon">
-                    <StarIcon />
-                  </div>
-                  <div>
-                    <h6 className="mb-0">4.9/5 Rating</h6>
-                    <small className="text-muted">Based on 1,000+ reviews</small>
-                  </div>
-                </div>
+                
               </div>
             </Col>
           </Row>
@@ -93,15 +84,15 @@ const Home: React.FC = () => {
       </section>
 
       {/* Features Section */}
-      <section className="features-section">
+      <section className="features-section bg-roblox-light">
         <Container>
           <h2 className="section-title">Key Features</h2>
-          <p className="section-subtitle">Everything you need to make math learning engaging and effective</p>
+          <p className="section-subtitle">Gamify your math classroom with these powerful tools</p>
           <Row className="g-4">
             {features.map((feature, index) => (
               <Col key={index} md={4}>
-                <div className="feature-card">
-                  <div className="feature-icon">
+                <div className="feature-card feature-glow">
+                  <div className="feature-icon animated-icon">
                     {feature.icon}
                   </div>
                   <h4 className="feature-title">{feature.title}</h4>
@@ -114,20 +105,20 @@ const Home: React.FC = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="testimonials-section">
+      <section className="testimonials-section bg-roblox-dark text-white">
         <Container>
           <h2 className="section-title">What Educators Say</h2>
-          <p className="section-subtitle">Join thousands of satisfied teachers using MathQuest</p>
+          <p className="section-subtitle text-light">Trusted by teachers across the country</p>
           <Row className="g-4">
             {testimonials.map((testimonial, index) => (
               <Col key={index} md={4}>
-                <div className="testimonial-card">
+                <div className="testimonial-card roblox-card">
                   <div className="testimonial-rating">
                     {[...Array(5)].map((_, i) => (
-                      <StarIcon key={i} />
+                      <StarIcon key={i} className="star-glow" />
                     ))}
                   </div>
-                  <p className="testimonial-quote">{testimonial.quote}</p>
+                  <p className="testimonial-quote">"{testimonial.quote}"</p>
                   <div>
                     <h6 className="testimonial-author">{testimonial.author}</h6>
                     <small className="testimonial-role">{testimonial.role}</small>

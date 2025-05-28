@@ -1,9 +1,18 @@
 <?php
+// Handle CORS
 header("Access-Control-Allow-Origin: *");
-header("Content-Type: application/json");
-header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Allow-Headers: Content-Type");
+header("Access-Control-Allow-Methods: POST, OPTIONS");
+header("Access-Control-Max-Age: 86400"); // Cache CORS preflight for 1 day
+header("Content-Type: application/json");
 
+// Respond to preflight requests
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(200);
+    exit();
+}
+
+// Include database connection
 include 'db.php';
 
 // Debugging
@@ -33,7 +42,7 @@ $email = $data['email'];
 $password = password_hash($data['password'], PASSWORD_DEFAULT);
 $role = $data['role'];
 
-// Check if email exists
+// Check if email already exists
 $check = $conn->prepare("SELECT id FROM users WHERE email = ?");
 $check->bind_param("s", $email);
 $check->execute();
@@ -46,14 +55,14 @@ if ($check->num_rows > 0) {
 }
 $check->close();
 
-// Insert user into DB
+// Insert user into the database
 $stmt = $conn->prepare("INSERT INTO users (first_name, last_name, email, password, role) VALUES (?, ?, ?, ?, ?)");
 $stmt->bind_param("sssss", $first_name, $last_name, $email, $password, $role);
 
 if ($stmt->execute()) {
     echo json_encode(["status" => "success", "message" => "Registered successfully."]);
 } else {
-    echo json_encode(["status" => "error", "message" => "Registration failed. Server error."]);
+    echo json_encode(["status" => "error", "message" => "Registration failed: " . $stmt->error]);
 }
 
 $stmt->close();

@@ -2,7 +2,11 @@
 
 .home-page {
   min-height: 100vh;
-  background-color: var(--light-bg);
+  background-image: url('/roblox.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 /* Hero Section */
@@ -116,7 +120,7 @@
 /* Features Section */
 .features-section {
   padding: 6rem 0;
-  background-color: white;
+  background-color: transparent;
 }
 
 .section-title {
@@ -124,13 +128,13 @@
   font-weight: 700;
   text-align: center;
   margin-bottom: 1rem;
-  color: var(--text-color);
+  color: white;
 }
 
 .section-subtitle {
   font-size: 1.125rem;
   text-align: center;
-  color: var(--secondary-color);
+  color: #ccc;
   margin-bottom: 3rem;
   max-width: 600px;
   margin-left: auto;
@@ -138,45 +142,49 @@
 }
 
 .feature-card {
-  background-color: white;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
   border-radius: 1rem;
   padding: 2rem;
   height: 100%;
-  transition: all var(--transition-speed) ease;
-  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  color: white;
 }
 
 .feature-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-  border-color: var(--primary-color);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.4);
+  border-color: #00bfff;
 }
 
 .feature-icon {
   width: 64px;
   height: 64px;
   border-radius: 1rem;
-  background-color: rgba(var(--primary-color-rgb), 0.1);
+  background-color: rgba(0, 123, 255, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 1.5rem;
+  box-shadow: 0 0 12px rgba(0, 123, 255, 0.6);
 }
 
 .feature-icon svg {
   font-size: 32px;
-  color: var(--primary-color);
+  color: #00bfff;
 }
 
 .feature-title {
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: var(--text-color);
+  color: white;
 }
 
 .feature-description {
-  color: var(--secondary-color);
+  color: #ddd;
   margin-bottom: 0;
   line-height: 1.6;
 }
@@ -184,27 +192,30 @@
 /* Testimonials Section */
 .testimonials-section {
   padding: 6rem 0;
-  background-color: var(--light-bg);
+  background-color: transparent;
 }
 
 .testimonial-card {
-  background-color: white;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
   border-radius: 1rem;
   padding: 2rem;
   height: 100%;
-  transition: all var(--transition-speed) ease;
-  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  color: white;
 }
 
 .testimonial-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-  border-color: var(--primary-color);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.4);
+  border-color: #00bfff;
 }
 
 .testimonial-rating {
   color: #FFD700;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   display: flex;
   gap: 0.25rem;
 }
@@ -212,19 +223,19 @@
 .testimonial-quote {
   font-size: 1.125rem;
   line-height: 1.6;
-  color: var(--text-color);
+  color: white;
   margin-bottom: 1.5rem;
   font-style: italic;
 }
 
 .testimonial-author {
-  font-weight: 600;
-  color: var(--text-color);
+  font-weight: 700;
+  color: white;
   margin-bottom: 0.25rem;
 }
 
 .testimonial-role {
-  color: var(--secondary-color);
+  color: #ccc;
 }
 
 /* CTA Section */
@@ -337,4 +348,61 @@
   .cta-subtitle {
     font-size: 1rem;
   }
-} 
+}
+
+/* Text Color Fixes */
+.hero-section .hero-title,
+.hero-section .hero-subtitle,
+.cta-section .cta-title,
+.cta-section .cta-subtitle {
+  color: white !important;
+  font-weight: 700 !important;
+}
+
+.hero-rating h6,
+.hero-rating small {
+  color: white !important;
+  font-weight: 700 !important;
+}
+
+/* Feature Section Text Color Fix */
+.feature-title,
+.feature-description,
+.feature-card,
+.feature-icon svg {
+  color: #ffffff;
+}
+
+/* Testimonial Section Text Color Fix */
+.testimonial-card,
+.testimonial-quote,
+.testimonial-author,
+.testimonial-role {
+  color: #f0f0f0;
+}
+
+.testimonial-role {
+  color: #d0d0d0;
+}
+
+/* Ensure call-to-action contrast */
+.cta-section,
+.cta-title,
+.cta-subtitle {
+  color: #ffffff;
+}
+
+.cta-subtitle {
+  color: #eeeeee;
+  opacity: 1;
+}
+
+/* Scoped black text outline for Home page only */
+.home-page * {
+  text-shadow:
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
+}
+
