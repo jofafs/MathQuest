@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import swal from 'sweetalert';
 
 const Register: React.FC = () => {
   const [firstName, setFirstName] = useState('');
@@ -6,11 +7,9 @@ const Register: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [role, setRole] = useState('student');
-  const [message, setMessage] = useState('');
 
   const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault();
-    setMessage('');
 
     try {
       const response = await fetch('http://localhost/MathQuest/backend/register.php', {
@@ -27,12 +26,12 @@ const Register: React.FC = () => {
 
       const data = await response.json();
       if (data.status === 'success') {
-        setMessage('Registration successful! You can now login.');
+        swal("Registration Successful!", "You can now login.", "success");
       } else {
-        setMessage(data.message);
+        swal("Registration Failed!", data.message || "Something went wrong.", "error");
       }
     } catch (error) {
-      setMessage('Registration failed. Server error.');
+      swal("Registration Failed!", "Server error occurred.", "error");
     }
   };
 
@@ -82,7 +81,6 @@ const Register: React.FC = () => {
         </select>
         <button type="submit" style={{ width: '100%', padding: 10 }}>Register</button>
       </form>
-      {message && <p style={{ marginTop: 10 }}>{message}</p>}
     </div>
   );
 };

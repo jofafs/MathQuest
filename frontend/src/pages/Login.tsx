@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Form } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
+import swal from 'sweetalert';
 import {
   School as SchoolIcon,
   Lock as LockIcon,
@@ -32,15 +33,15 @@ const Login: React.FC = () => {
 
       const data = await response.json();
       if (data.status === 'success') {
-        setMessage(`Welcome ${data.user.firstName} (${data.user.role})!`);
+        swal("Login Successfully!", `Welcome ${data.user.firstName} (${data.user.role})!`, "success");
         localStorage.setItem('user', JSON.stringify(data.user));
         setCurrentUser(data.user);
         navigate('/dashboard');
       } else {
-        setMessage(data.message);
+        swal("Login Failed!", "Check your credentials.", "error");
       }
     } catch (error) {
-      setMessage('Login failed. Server error.');
+      swal("Login Failed!", "Server error occurred.", "error");
     } finally {
       setLoading(false);
     }
@@ -59,12 +60,6 @@ const Login: React.FC = () => {
 
         <div className="auth-card">
           <div className="auth-card-body">
-            {message && (
-              <div className={`auth-alert ${message.includes('Welcome') ? 'auth-alert-success' : 'auth-alert-danger'}`}>
-                {message}
-              </div>
-            )}
-
             <Form onSubmit={handleLogin}>
               <div className="auth-form-group">
                 <Form.Label className="auth-form-label">Email Address</Form.Label>
